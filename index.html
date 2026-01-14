@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<!-- Navigation -->
     <nav class="navbar">
         <div class="logo">Teresia Mwangi</div>
         
@@ -18,8 +17,6 @@
             <li><a href="#about">About</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
 
@@ -33,7 +30,6 @@
         </div>
     </nav>
 
-<!-- Hero Section -->
     <header class="hero" id="home">
         <div class="container">
             <div class="hero-content">
@@ -46,7 +42,7 @@
                     and the full analysis lifecycle to turn raw information into clear, actionable intelligence.
                 </p>
 
-                <div class="stats-bar">
+                <div class="stats-bar card-base">
                     <div class="stat-item">
                         <div class="stat-icon"><i class="fas fa-user-clock"></i></div>
                         <div class="stat-info">
@@ -86,23 +82,21 @@
             </div>
 
             <div class="hero-visual">
-                <img src="/9608.jpg" alt="Data Network Visualization" class="network-img">
+                <img src="/Assets/home.jpg" alt="Data Network Visualization" class="network-img">
             </div>
         </div>
-        
     </header>
 
-<!-- About Section -->
-<section id="about" class="about-section">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-label">Who I Am</span>
-            <h2 class="section-title">More Than Just a Data Analyst</h2>
-            <p class="section-subtitle">I believe in the power of curiosity, integrity, and human-centered insights.</p>
-        </div>
-        
-        <div class="about-flex">
-            <div class="about-narrative">
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Who I Am</span>
+                <h2 class="section-title">More Than Just a Data Analyst</h2>
+                <p class="section-subtitle">I believe in the power of curiosity, integrity, and human-centered insights.</p>
+            </div>
+            
+            <div class="about-flex">
+                <div class="about-narrative">
                 <p class="lead-text">
                     I don't just analyze data; I understand where it comes from—and the people it serves.
                 </p>
@@ -122,122 +116,88 @@
                     to solve everyday problems. Whether I'm collaborating with a team or diving deep into a dataset, I bring the same values: 
                     <strong>integrity</strong>, <strong>empathy</strong>, and a commitment to <strong>continuous growth</strong>.
                 </p>
-                <div class="cta-mini">
-                    <a href="your-resume.pdf" class="btn-text">Download Full Resume <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <div class="value-pillars">
-                <div class="core-values-header">
-                    <h3>My Core Values</h3>
-                    <p>The principles that guide my work and life</p>
-                </div>
-                
-                <div class="pillar-card">
-                    <div class="pillar-icon"><i class="fas fa-compass"></i></div>
-                    <h4>Curiosity-Driven</h4>
-                    <p>I approach every problem with genuine curiosity, always asking "why?" and "what if?" to uncover deeper insights.</p>
-                </div>
-                <div class="pillar-card">
-                    <div class="pillar-icon"><i class="fas fa-handshake"></i></div>
-                    <h4>Integrity & Transparency</h4>
-                    <p>I believe in honest communication, ethical data practices, and building trust through consistent, reliable work.</p>
-                </div>
-                <!-- <div class="pillar-card">
-                    <div class="pillar-icon"><i class="fas fa-users"></i></div>
-                    <h4>Human-Centered Analysis</h4>
-                    <p>Behind every dataset are real people. I strive to create insights that are accessible, actionable, and impactful.</p>
-                </div> -->
-                <div class="pillar-card">
-                    <div class="pillar-icon"><i class="fas fa-seedling"></i></div>
-                    <h4>Continuous Growth</h4>
-                    <p>I'm committed to learning, adapting, and evolving—whether mastering new tools or understanding diverse perspectives.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Portfolio Section -->
-<section class="portfolio-section" id="portfolio">
-        <div class="section-header">
-            <span class="section-label">My Work</span>
-            <h2 class="section-title">Portfolio</h2>
-            <p class="section-subtitle">Explore some of my recent data analysis projects and case studies</p>
-        </div>
-
-        <div class="portfolio-grid">
-<!-- Project 1 -->
-<div class="project-card" data-project="bank">
-    <div class="project-image">
-        <img src="/Images/bank_loan/Summary.png" alt="Bank loan analysis" class="project-img" loading="lazy">
-    </div>
-    <div class="project-content">
-        <h3 class="project-title">Bank Loan Analysis Dashboard</h3>
-        <p class="project-description">The Bank Loan Analysis Dashboard is an end-to-end data analytics solution designed to transform raw banking data into strategic insights for portfolio management. Built from the ground up using a complete ETL (Extract, Transform, Load) pipeline, this project addresses critical banking challenges by providing real-time visibility into loan performance, risk assessment, and portfolio optimization opportunities.</p>
-        <div class="project-tags">
-            <span class="tag">SQL</span>
-            <span class="tag">Power BI</span>
-            <span class="tag">DAX</span>
-            <span class="tag">Power Query</span>
-        </div>
-        <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
-        <!-- <div class="project-links">
-            <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
-            <a href="https://github.com/MwangiTess/bank-loan-analysis" 
-                class="github-icon" 
-                target="_blank"
-                onclick="event.stopPropagation()">
-                <i class="fab fa-github"></i>
-            </a>
-        </div> -->
-    </div>
-</div>
-
-            <!-- Project 2 -->
-            <div class="project-card" data-project="water">
-                <div class="project-image">
-                    <img src="/Images//maji_ndogo//national.png" alt="Maji ndogo" class="project-img" loading="lazy">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Maji Ndogo Water Infrastructure Dashboard</h3>
-                    <p class="project-description">Developed an interactive Power BI dashboard system tracking $147M in water infrastructure investments across five provinces. The solution monitors budget allocation efficiency, infrastructure improvement completion rates, and identifies rural-urban resource disparities to optimize water access initiatives.</p>
-                    <div class="project-tags">
-                        <span class="tag">Power BI</span>
-                        <span class="tag">Data Modeling</span>
-                        <span class="tag">Budget Analytics</span>
-                        <span class="tag">SQL</span>
+                    <div class="cta-mini">
+                        <a href="/Assets/Teresia Wanjiku CV.pdf" class="btn-text">Download Full Resume <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                </div>
+
+                <div class="value-pillars">
+                    <div class="core-values-header">
+                        <h3>My Core Values</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 20px;">The principles that guide my work and life</p>
+                    </div>
+                    
+                    <div class="pillar-card card-base">
+                        <div class="pillar-icon"><i class="fas fa-compass"></i></div>
+                        <h4>Curiosity-Driven</h4>
+                        <p>I approach every problem with genuine curiosity, always asking "why?" and "what if?" to uncover deeper insights.</p>
+                    </div>
+                    <div class="pillar-card card-base">
+                        <div class="pillar-icon"><i class="fas fa-handshake"></i></div>
+                        <h4>Integrity & Transparency</h4>
+                        <p>I believe in honest communication, ethical data practices, and building trust through consistent, reliable work.</p>
+                    </div>
+                    <div class="pillar-card card-base">
+                        <div class="pillar-icon"><i class="fas fa-seedling"></i></div>
+                        <h4>Continuous Growth</h4>
+                        <p>I'm committed to learning, adapting, and evolving—whether mastering new tools or understanding diverse perspectives.</p>
+                    </div>
                 </div>
             </div>
-
-            <!-- Project 3 -->
-            <!-- <div class="project-card" data-project="risk">
-                <div class="project-image">
-                    <img src="/17448.jpg" alt="Financial Risk Assessment" class="project-img" loading="lazy">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">Financial Risk Assessment</h3>
-                    <p class="project-description">Predictive modeling for financial risk assessment using machine learning algorithms and statistical analysis.</p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Machine Learning</span>
-                        <span class="tag">Risk Analysis</span>
-                        <span class="tag">SQL</span>
-                    </div>
-                    <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </div> -->
         </div>
     </section>
 
-    <!-- Modal -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">My Work</span>
+                <h2 class="section-title">Portfolio</h2>
+                <p class="section-subtitle">Explore some of my recent data analysis projects and case studies</p>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="project-card card-base" data-project="bank">
+                    <div class="project-image">
+                        <img src="/Assets/bank_loan/Summary.png" alt="Bank loan analysis" class="project-img" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Bank Loan Analysis Dashboard</h3>
+                        <p class="project-description">End-to-end analytics solution transforming raw banking data into strategic insights for portfolio management, utilizing a complete ETL pipeline.</p>
+                        <div class="project-tags">
+                            <span class="tag">SQL</span>
+                            <span class="tag">Power BI</span>
+                            <span class="tag">DAX</span>
+                            <span class="tag">Power Query</span>
+                        </div>
+                        <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+
+                <div class="project-card card-base" data-project="water">
+                    <div class="project-image">
+                        <img src="/Assets/maji_ndogo/national.png" alt="Maji ndogo" class="project-img" loading="lazy">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Maji Ndogo Water Infrastructure</h3>
+                        <p class="project-description">Interactive Power BI dashboard tracking $147M in water infrastructure investments, monitoring budget allocation and rural-urban resource disparities.</p>
+                        <div class="project-tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">Data Modeling</span>
+                            <span class="tag">Budget Analytics</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                        <span class="view-details">View Details <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="modal-overlay" id="projectModal">
         <div class="modal-content">
             <div class="modal-header">
                 <div>
-                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <h2 class="modal-title" id="modalTitle">Project Title</h2>
                     <div class="project-tags" id="modalTags"></div>
                 </div>
                 <button class="close-modal" id="closeModal">
@@ -247,6 +207,98 @@
             <div class="modal-body" id="modalBody"></div>
         </div>
     </div>
+
+
+<section id="experience" class=".experience-section">
+    <div class="container">
+        <h2 class="section-title">Professional Experience</h2>
+        <p class="section-subtitle">Transforming operational data into actionable insights across diverse industries</p>
+        
+        <div class="experience-timeline">
+
+            <!-- 2025-Present Independent Projects -->
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Independent Data Analyst | Technical Projects</h3>
+                        <p class="experience-company">Personal Portfolio Development</p>
+                    </div>
+                    <span class="experience-duration">2025 - Present</span>
+                </div>
+                <div class="experience-content">
+                    <ul class="experience-list">
+                        <li><strong>Bank Loan Analysis Dashboard:</strong> Built end-to-end ETL pipeline using SQL Server, processing 100,000+ loan records to create interactive Power BI dashboards tracking $15M+ portfolios</li>
+                        <li><strong>Water Infrastructure Analytics:</strong> Developed comprehensive Power BI solution analyzing $147M budget allocation across 5 provinces, identifying optimization opportunities</li>
+                        <li><strong>Full Data Pipeline Development:</strong> Gained expertise in complete data lifecycle from extraction (SQL) through transformation (ETL) to visualization (Power BI/Tableau)</li>
+                        <li><strong>Stakeholder Reporting:</strong> Created executive-level dashboards with actionable insights for hypothetical business stakeholders</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 2024 Experience -->
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Front-end Software Developer | Data Integration Focus</h3>
+                        <p class="experience-company">FASI</p>
+                    </div>
+                    <span class="experience-duration">May - August 2024</span>
+                </div>
+                <div class="experience-content">
+                    <ul class="experience-list">
+                        <li><strong>Data Flow Optimization:</strong> Debugged and optimized data flow between front-end and back-end systems, improving application performance by 30% through data pipeline enhancements</li>
+                        <li><strong>API & Data Integration:</strong> Consumed RESTful APIs and integrated diverse data sources to create unified front-end experiences, gaining hands-on experience with full data lifecycle</li>
+                        <li><strong>Agile Data Collaboration:</strong> Collaborated in cross-functional teams using Agile methodologies, participating in sprint planning focused on data-driven feature development</li>
+                        <li><strong>Analytical Problem-Solving:</strong> Applied systematic troubleshooting to identify and resolve data inconsistencies across application layers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Iprocure Limited (2022) -->
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Warehouse Operations & Data Management Specialist</h3>
+                        <p class="experience-company">Iprocure Limited</p>
+                    </div>
+                    <span class="experience-duration">September - December 2022</span>
+                </div>
+                <div class="experience-content">
+                    <ul class="experience-list">
+                        <li><strong>Inventory Data Management:</strong> Maintained 99% accuracy in stock records through systematic data validation and reconciliation processes across 5,000+ SKUs</li>
+                        <li><strong>Procurement Analytics:</strong> Analyzed procurement data to optimize ordering schedules, reducing stockouts by 40% while maintaining optimal inventory levels</li>
+                        <li><strong>Financial Data Reporting:</strong> Prepared accurate weekly and monthly reports tracking $500K+ in inventory value, identifying trends in product demand</li>
+                        <li><strong>Process Optimization:</strong> Developed streamlined data entry procedures for warehouse management systems, reducing reporting time by 25%</li>
+                        <li><strong>Data-Driven Operations:</strong> Utilized inventory data to coordinate receiving/dispatch operations, achieving 100% KPI targets for efficiency</li>
+                        <li><strong>Cross-Functional Data Coordination:</strong> Collaborated with finance and operations teams to ensure data consistency across systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Marble Arch Hotel (2019-2022) -->
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Procurement & Stores Control Clerk</h3>
+                        <p class="experience-company">Marble Arch Hotel, Nairobi</p>
+                    </div>
+                    <span class="experience-duration">August 2019 - July 2022</span>
+                </div>
+                <div class="experience-content">
+                    <ul class="experience-list">
+                        <li><strong>Stock Data Management:</strong> Managed comprehensive stock taking, reconciliation, and procurement activities with precise data tracking</li>
+                        <li><strong>Inventory Analytics:</strong> Ensured accurate stock tracking and timely dispatch of products through systematic data analysis</li>
+                        <li><strong>Financial Data Preparation:</strong> Prepared detailed financial reports by comparing goods received with purchase invoices and analyzing procurement data</li>
+                        <li><strong>Reporting Systems:</strong> Controlled daily store issues/transfers and prepared accurate weekly and monthly reports for management decision-making</li>
+                        <li><strong>Data Quality Assurance:</strong> Implemented validation procedures ensuring data accuracy across procurement, inventory, and financial reporting systems</li>
+                        <li><strong>Supply Chain Optimization:</strong> Used historical data to forecast demand and optimize inventory levels, reducing carrying costs by 20%</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
 
     <script src="index.js"></script>

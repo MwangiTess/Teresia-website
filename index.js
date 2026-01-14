@@ -61,9 +61,9 @@ const projects = {
         title: "Bank Loan Analysis Dashboard",
         tags: ["SQL", "Power BI", "Data Analysis", "DAX"],
         images: [
-            "/Images/bank_loan/Summary.png",
-            "/Images/bank_loan/Bank_loan_report.png",
-            "/Images/bank_loan/Bank_loan_details.png"
+            "/Assets/bank_loan/Summary.png",
+            "/Assets/bank_loan/Bank_loan_report.png",
+            "/Assets/bank_loan/Bank_loan_details.png"
         ],
         overview: `A comprehensive bank loan analysis system designed to transform raw lending data into actionable insights through an end-to-end data pipeline. The project addresses critical banking needs by monitoring loan portfolio performance, distinguishing between performing ("Good") and non-performing ("Bad") loans, and identifying trends across time, geography, and borrower demographics to support data-driven decision-making in portfolio management.`,
         methodology: [
@@ -84,8 +84,8 @@ const projects = {
         title: "Maji Ndogo Water Infrastructure Dashboard",
         tags: ["Power BI", "Data Modeling", "Budget Analysis", "DAX"],
         images: [
-            "/Images/maji_ndogo/national.png",
-            "/Images/maji_ndogo/province.png"
+            "/Assets/maji_ndogo/national.png",
+            "/Assets/maji_ndogo/province.png"
         ],
         overview: "A comprehensive water infrastructure analytics system designed to monitor and optimize budget allocation across the Maji Ndodo national water network. This Power BI dashboard provides critical insights into water access initiatives across five provinces (Akatsi, Amarzi, Hawassa, Kilimani, Sokoto), tracking infrastructure improvements, spending efficiency, and addressing rural-urban disparities in water resource distribution.",
         methodology: [
