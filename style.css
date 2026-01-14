@@ -318,6 +318,8 @@ button {
     padding: 15px 25px;
     width: fit-content;
     margin-bottom: 40px;
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
 }
 
 .stat-item {
@@ -376,15 +378,37 @@ button {
     flex: 1;
     display: flex;
     justify-content: flex-end;
+    position: relative;
 }
 
 .network-img {
     max-width: 120%;
     height: auto;
-    mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
-    -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
     opacity: 0.8;
     transform: translateX(10%);
+}
+
+/* Light mode gradient overlay */
+.hero-visual::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -20%;
+    right: 0;
+    background: linear-gradient(to right, var(--bg-color) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Dark mode - adjust image opacity and add stronger gradient */
+body.dark-mode .network-img {
+    opacity: 0.3;
+    filter: brightness(0.6) contrast(0.9);
+}
+
+body.dark-mode .hero-visual::before {
+    background: linear-gradient(to right, var(--bg-color) 0%, var(--bg-color) 20%, transparent 70%);
 }
 
 /* =========================================
@@ -930,9 +954,13 @@ button {
     gap: 15px;
     margin: 30px 0;
     padding: 25px;
-    background: var(--bg-color);
+    background: rgba(0, 0, 0, 0.03);
     border-radius: var(--radius-md);
     flex-wrap: wrap;
+}
+
+body.dark-mode .project-links-section {
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .github-link,
@@ -948,23 +976,40 @@ button {
 }
 
 .github-link {
-    background: var(--text-main);
+    background: #24292e;
     color: #fff;
+    border: 2px solid #24292e;
 }
 
 .github-link:hover {
-    background: var(--text-secondary);
+    background: #1a1e22;
+    border-color: #1a1e22;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .github-link {
+    background: #ffffff;
+    color: #24292e;
+    border-color: #ffffff;
+}
+
+body.dark-mode .github-link:hover {
+    background: #e6e6e6;
+    border-color: #e6e6e6;
 }
 
 .demo-link {
     background: var(--primary-color);
     color: #fff;
+    border: 2px solid var(--primary-color);
 }
 
 .demo-link:hover {
     background: var(--primary-hover);
+    border-color: var(--primary-hover);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
 .github-link i,
