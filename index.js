@@ -53,6 +53,63 @@ document.addEventListener('DOMContentLoaded', () => {
             menuIcon.classList.add('fa-bars');
         });
     });
+
+    // --- Smooth Scroll with Offset for Fixed Navbar ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = targetElement.offsetTop - navbarHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // --- Back to Top Button ---
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // --- Lazy Loading Images ---
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src || img.src;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        lazyImages.forEach(img => imageObserver.observe(img));
+    }
 });
 
 // Project data
@@ -87,7 +144,7 @@ const projects = {
             "/Assets/maji_ndogo/national.png",
             "/Assets/maji_ndogo/province.png"
         ],
-        overview: "A comprehensive water infrastructure analytics system designed to monitor and optimize budget allocation across the Maji Ndodo national water network. This Power BI dashboard provides critical insights into water access initiatives across five provinces (Akatsi, Amarzi, Hawassa, Kilimani, Sokoto), tracking infrastructure improvements, spending efficiency, and addressing rural-urban disparities in water resource distribution.",
+        overview: "A comprehensive water infrastructure analytics system designed to monitor and optimize budget allocation across the Maji Ndogo national water network. This Power BI dashboard provides critical insights into water access initiatives across five provinces (Akatsi, Amarzi, Hawassa, Kilimani, Sokoto), tracking infrastructure improvements, spending efficiency, and addressing rural-urban disparities in water resource distribution.",
         methodology: [
             "Data Integration: Consolidated regional water infrastructure data into unified Power BI data models with calculated measures for budget efficiency",
             "Dashboard Architecture: Built two interconnected dashboards - National Analysis for KPIs and Provincial Analysis for granular insights",
@@ -104,6 +161,29 @@ const projects = {
     }
 };
 
+// Fallback image for error handling
+const FALLBACK_IMAGE = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"%3E%3Crect fill="%23f0f0f0" width="400" height="300"/%3E%3Ctext fill="%23999" font-family="sans-serif" font-size="18" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3EImage Not Available%3C/text%3E%3C/svg%3E';
+
+// Image loading with error handling
+function loadImageWithFallback(imgElement, src) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        
+        img.onload = () => {
+            imgElement.src = src;
+            resolve();
+        };
+        
+        img.onerror = () => {
+            imgElement.src = FALLBACK_IMAGE;
+            imgElement.alt = 'Image failed to load';
+            resolve(); // Still resolve to remove loading state
+        };
+        
+        img.src = src;
+    });
+}
+
 // Modal functionality
 const modal = document.getElementById('projectModal');
 const closeBtn = document.getElementById('closeModal');
@@ -117,57 +197,93 @@ projectCards.forEach(card => {
     });
 });
 
-function openModal(project) {
+async function openModal(project) {
     document.getElementById('modalTitle').textContent = project.title;
     
     // Tags
     const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
     document.getElementById('modalTags').innerHTML = tagsHTML;
     
-const bodyHTML = `
-    <div class="image-gallery">
-        <img src="${project.images[0]}" alt="${project.title}" class="main-image" id="mainImage">
-        <div class="thumbnail-gallery">
-            ${project.images.map((img, index) => 
-                `<img src="${img}" alt="Thumbnail ${index + 1}" class="thumbnail ${index === 0 ? 'active' : ''}" data-index="${index}">`
-            ).join('')}
+    // Show loading state
+    const bodyHTML = `
+        <div class="loading-container">
+            <div class="loading-spinner"></div>
+            <p>Loading project details...</p>
         </div>
-    </div>
-    
-    <div class="detail-section">
-        <h3>Project Overview</h3>
-        <p>${project.overview}</p>
-    </div>
-    
-    <div class="detail-section">
-        <h3>Methodology</h3>
-        <ul>
-            ${project.methodology.map(item => `<li>${item}</li>`).join('')}
-        </ul>
-    </div>
-    
-    <div class="detail-section">
-        <h3>Key Results</h3>
-        <ul>
-            ${project.results.map(item => `<li>${item}</li>`).join('')}
-        </ul>
-    </div>
-
-    <!-- Add GitHub link section BEFORE other sections if you want it prominent -->
-    ${project.github ? `
-    <div class="project-links-section">
-        <a href="${project.github}" target="_blank" class="github-link">
-            <i class="fab fa-github"></i> View Source Code on GitHub
-        </a>
-        ${project.liveDemo ? `
-        <a href="${project.liveDemo}" target="_blank" class="demo-link">
-            <i class="fas fa-external-link-alt"></i> Live Demo
-        </a>` : ''}
-    </div>
-    ` : ''}
-`;
+    `;
     
     document.getElementById('modalBody').innerHTML = bodyHTML;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // Load the first image to check if it works
+    const mainImg = new Image();
+    
+    mainImg.onload = () => {
+        // Image loaded successfully, render full content
+        renderModalContent(project);
+    };
+    
+    mainImg.onerror = () => {
+        // Image failed, still render with fallback
+        renderModalContent(project);
+    };
+    
+    mainImg.src = project.images[0];
+}
+
+function renderModalContent(project) {
+    const contentHTML = `
+        <div class="image-gallery">
+            <img src="${project.images[0]}" 
+                alt="${project.title}" 
+                class="main-image" 
+                id="mainImage"
+                onerror="this.src='${FALLBACK_IMAGE}'">
+            <div class="thumbnail-gallery">
+                ${project.images.map((img, index) => 
+                    `<img src="${img}" 
+                        alt="Thumbnail ${index + 1}" 
+                        class="thumbnail ${index === 0 ? 'active' : ''}" 
+                        data-index="${index}"
+                        onerror="this.src='${FALLBACK_IMAGE}'">`
+                ).join('')}
+            </div>
+        </div>
+        
+        <div class="detail-section">
+            <h3>Project Overview</h3>
+            <p>${project.overview}</p>
+        </div>
+        
+        <div class="detail-section">
+            <h3>Methodology</h3>
+            <ul>
+                ${project.methodology.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+        </div>
+        
+        <div class="detail-section">
+            <h3>Key Results</h3>
+            <ul>
+                ${project.results.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+        </div>
+
+        ${project.github ? `
+        <div class="project-links-section">
+            <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="github-link">
+                <i class="fab fa-github"></i> View Source Code on GitHub
+            </a>
+            ${project.liveDemo ? `
+            <a href="${project.liveDemo}" target="_blank" rel="noopener noreferrer" class="demo-link">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>` : ''}
+        </div>
+        ` : ''}
+    `;
+    
+    document.getElementById('modalBody').innerHTML = contentHTML;
     
     // Add thumbnail click handlers
     const thumbnails = document.querySelectorAll('.thumbnail');
@@ -182,9 +298,6 @@ const bodyHTML = `
             this.classList.add('active');
         });
     });
-    
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
 }
 
 function closeModal() {

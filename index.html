@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
     <!-- Navigation -->
@@ -203,7 +205,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div>
-                    <h2 class="modal-title" id="modalTitle">Project Title</h2>
+                    <h2 class="modal-title" id="modalTitle"></h2>
                     <div class="project-tags" id="modalTags"></div>
                 </div>
                 <button class="close-modal" id="closeModal">
@@ -335,7 +337,7 @@
                             <div class="cert-icon"><i class="fas fa-chart-line"></i></div>
                             <h4>ALX Certification in Data Analytics</h4>
                         </div>
-                        <p class="cert-issuer">ALX Africa</p>
+                        <p class="cert-issuer">ALX Africa • June - September 2025</p>
                         <div class="skill-tags">
                             <span class="skill-tag">Data Analysis</span>
                             <span class="skill-tag">Excel</span>
@@ -349,7 +351,7 @@
                             <div class="cert-icon"><i class="fab fa-python"></i></div>
                             <h4>ALX Python Programming Certificate</h4>
                         </div>
-                        <p class="cert-issuer">ALX Africa</p>
+                        <p class="cert-issuer">ALX Africa • October - December 2025</p>
                         <div class="skill-tags">
                             <span class="skill-tag">Python</span>
                             <span class="skill-tag">OOP</span>
@@ -364,7 +366,7 @@
                             <div class="cert-icon"><i class="fas fa-code"></i></div>
                             <h4>Software Engineering Certification</h4>
                         </div>
-                        <p class="cert-issuer">Moringa School</p>
+                        <p class="cert-issuer">Moringa School • March - November 2023</p>
                         <div class="skill-tags">
                             <span class="skill-tag">Full-Stack</span>
                             <span class="skill-tag">JavaScript</span>
@@ -378,7 +380,7 @@
                             <div class="cert-icon"><i class="fas fa-user-tie"></i></div>
                             <h4>Professional Foundations Certification</h4>
                         </div>
-                        <p class="cert-issuer">ALX Africa</p>
+                        <p class="cert-issuer">ALX Africa • March - May 2025</p>
                         <div class="skill-tags">
                             <span class="skill-tag">Leadership</span>
                             <span class="skill-tag">Communication</span>
@@ -387,7 +389,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+
 
             <!-- Skills Section -->
             <div class="skills-group" id="skills">
@@ -508,10 +510,16 @@
             </div>
         </footer>
 
+        <!-- Add Back to Top Button - Place before closing -->
+        <button id="backToTop" class="back-to-top" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
         <script>
             document.getElementById("year").textContent = new Date().getFullYear();
         </script>
 
+    <!-- Script -->
     <script src="index.js"></script>
 </body>
 </html>
