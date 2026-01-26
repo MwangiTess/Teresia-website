@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="logo">Teresia Mwangi</div>
         
@@ -17,7 +18,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#experience">Experience</a></li>
-            <li><a href="#education-skills">Education</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
 
@@ -31,6 +32,7 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <header class="hero" id="home">
         <div class="container">
             <div class="hero-content">
@@ -88,6 +90,7 @@
         </div>
     </header>
 
+    <!-- About Section -->
     <section id="about" class="about-section">
         <div class="container">
             <div class="section-header">
@@ -148,6 +151,7 @@
         </div>
     </section>
 
+    <!-- Portfolio Section -->
     <section class="portfolio-section" id="portfolio">
         <div class="container">
             <div class="section-header">
@@ -194,6 +198,7 @@
         </div>
     </section>
 
+    <!-- Modal Section -->
     <div class="modal-overlay" id="projectModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -210,11 +215,11 @@
     </div>
 
 
+    <!-- Experience Section -->
     <section id="experience" class=".experience-section">
         <div class="container">
             <h2 class="section-title">Professional Experience</h2>
             <p class="section-subtitle">Transforming operational data into actionable insights across diverse industries</p>
-            
             <div class="experience-timeline">
 
                 <!-- 2025-Present Independent Projects -->
@@ -235,7 +240,7 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <!-- 2024 Experience -->
                 <div class="experience-item">
                     <div class="experience-header">
@@ -296,167 +301,216 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
+    <!-- Education Section -->
     <section id="education" class="education-skills-section">
-    <div class="container">
-        
-        <div class="education-group">
-            <div class="section-header">
-                <span class="section-label">Background</span>
-                <h2 class="section-title">Education & Certifications</h2>
+        <div class="container">
+            <div class="education-group">
+                <div class="section-header">
+                    <span class="section-label">Background</span>
+                    <h2 class="section-title">Education & Certifications</h2>
+                </div>
+                
+                <div class="education-card">
+                    <div class="education-header">
+                        <h3>Bachelor of Economics and Finance</h3>
+                        <p class="education-institution">Mount Kenya University</p>
+                    </div>
+                    <div class="education-content">
+                        <p><strong>Relevant Coursework:</strong> Econometrics, Statistics, Financial Modeling, Quantitative Analysis, Microeconomics, Macroeconomics, Financial Accounting</p>
+                        <p><strong>Key Skills Developed:</strong> Statistical analysis, Financial modeling, Data interpretation, Economic forecasting, Quantitative research methods</p>
+                    </div>
+                </div>
+
+                <h3 class="sub-section-title" style="font-size: 1.5rem; margin-top: 50px;">
+                    <i class="fas fa-certificate"></i> Professional Certifications
+                </h3>
+
+                <div class="cert-grid">
+                    <div class="cert-card">
+                        <div class="cert-header">
+                            <div class="cert-icon"><i class="fas fa-chart-line"></i></div>
+                            <h4>ALX Certification in Data Analytics</h4>
+                        </div>
+                        <p class="cert-issuer">ALX Africa</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Data Analysis</span>
+                            <span class="skill-tag">Excel</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Power BI</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-header">
+                            <div class="cert-icon"><i class="fab fa-python"></i></div>
+                            <h4>ALX Python Programming Certificate</h4>
+                        </div>
+                        <p class="cert-issuer">ALX Africa</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">OOP</span>
+                            <span class="skill-tag">Matplotlib</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">Numpy</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-header">
+                            <div class="cert-icon"><i class="fas fa-code"></i></div>
+                            <h4>Software Engineering Certification</h4>
+                        </div>
+                        <p class="cert-issuer">Moringa School</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Full-Stack</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Ruby on Rails</span>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-header">
+                            <div class="cert-icon"><i class="fas fa-user-tie"></i></div>
+                            <h4>Professional Foundations Certification</h4>
+                        </div>
+                        <p class="cert-issuer">ALX Africa</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Leadership</span>
+                            <span class="skill-tag">Communication</span>
+                            <span class="skill-tag">Project Mgmt</span>
+                            <span class="skill-tag">Teamwork</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="education-card">
-                <div class="education-header">
-                    <h3>Bachelor of Economics and Finance</h3>
-                    <p class="education-institution">Mount Kenya University</p>
+
+            <!-- Skills Section -->
+            <div class="skills-group" id="skills">
+                <div class="section-header">
+                    <span class="section-label">Expertise</span>
+                    <h2 class="section-title">Technical Skills</h2>
                 </div>
-                <div class="education-content">
-                    <p><strong>Relevant Coursework:</strong> Econometrics, Statistics, Financial Modeling, Quantitative Analysis, Microeconomics, Macroeconomics, Financial Accounting</p>
-                    <p><strong>Key Skills Developed:</strong> Statistical analysis, Financial modeling, Data interpretation, Economic forecasting, Quantitative research methods</p>
-                </div>
-            </div>
-            
-            <h3 class="sub-section-title" style="font-size: 1.5rem; margin-top: 50px;">
-                <i class="fas fa-certificate"></i> Professional Certifications
-            </h3>
-            
-            <div class="cert-grid">
-                <div class="cert-card">
-                    <div class="cert-header">
-                        <div class="cert-icon"><i class="fas fa-chart-line"></i></div>
-                        <h4>ALX Certification in Data Analytics</h4>
+
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-terminal"></i> Programming & Databases</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                        </div>
                     </div>
-                    <p class="cert-issuer">ALX Africa</p>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Data Analysis</span>
-                        <span class="skill-tag">Excel</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Power BI</span>
+
+                    <div class="skill-category">
+                        <h3><i class="fas fa-chart-pie"></i> Data Analysis</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">Excel</span>
+                            <span class="skill-tag">DAX</span>
+                            <span class="skill-tag">Statistical Analysis</span>
+                            <span class="skill-tag">Data Modeling</span>
+                            <span class="skill-tag">Pandas & NumPy</span>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-header">
-                        <div class="cert-icon"><i class="fab fa-python"></i></div>
-                        <h4>ALX Python Programming Certificate</h4>
+
+                    <div class="skill-category">
+                        <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">Jupyter</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Power Query</span>
+                            <span class="skill-tag">ETL Pipelines</span>
+                        </div>
                     </div>
-                    <p class="cert-issuer">ALX Africa</p>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">OOP</span>
-                        <span class="skill-tag">Matplotlib</span>
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">Numpy</span>
+
+                    <div class="skill-category">
+                        <h3><i class="fas fa-briefcase"></i> Business Skills</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Data Storytelling</span>
+                            <span class="skill-tag">Business Intelligence</span>
+                            <span class="skill-tag">Agile</span>
+                            <span class="skill-tag">Problem Solving</span>
+                            <span class="skill-tag">Communication</span>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-header">
-                        <div class="cert-icon"><i class="fas fa-code"></i></div>
-                        <h4>Software Engineering Certification</h4>
-                    </div>
-                    <p class="cert-issuer">Moringa School</p>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Full-Stack</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Ruby on Rails</span>
-                    </div>
-                </div>
-                
-                <div class="cert-card">
-                    <div class="cert-header">
-                        <div class="cert-icon"><i class="fas fa-user-tie"></i></div>
-                        <h4>Professional Foundations Certification</h4>
-                    </div>
-                    <p class="cert-issuer">ALX Africa</p>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Leadership</span>
-                        <span class="skill-tag">Communication</span>
-                        <span class="skill-tag">Project Mgmt</span>
-                        <span class="skill-tag">Teamwork</span>
+
+                    <div class="skill-category">
+                        <h3><i class="fas fa-briefcase"></i> Domain Expertise</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Financial Modeling</span>
+                            <span class="skill-tag">Supply Chain Analytics</span>
+                            <span class="skill-tag">Stakeholder Management</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <div class="skills-group" id="skills">
-            <div class="section-header">
-                <span class="section-label">Expertise</span>
-                <h2 class="section-title">Technical Skills</h2>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            
+            <div class="contact-header-content">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="contact-subtitle">
+                    Ready to unlock insights from your data? Whether you have a question 
+                    or just want to say hi, I'm always open to discussing new projects and opportunities.
+                </p>
             </div>
 
-            <div class="skills-grid">
+            <div class="contact-grid">
                 
-                <div class="skill-category">
-                    <h3><i class="fas fa-terminal"></i> Programming & Databases</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">HTML/CSS</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">PostgreSQL</span>
+                <a href="mailto:teresiawanjiku110@gmail.com" class="contact-card">
+                    <div class="icon-box">
+                        <i class="fas fa-envelope"></i>
                     </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-chart-pie"></i> Data Analysis</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Power BI</span>
-                        <span class="skill-tag">Excel</span>
-                        <span class="skill-tag">DAX</span>
-                        <span class="skill-tag">Statistical Analysis</span>
-                        <span class="skill-tag">Data Modeling</span>
-                        <span class="skill-tag">Pandas & NumPy</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">GitHub</span>
-                        <span class="skill-tag">Jupyter</span>
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">Power Query</span>
-                        <span class="skill-tag">ETL Pipelines</span>
-                    </div>
-                </div>
+                    <h3>Send an Email</h3>
+                    <p>teresiawanjiku110@gmail.com</p>
+                    <span class="card-action">Write Message <i class="fas fa-arrow-right"></i></span>
+                </a>
 
-                <div class="skill-category">
-                    <h3><i class="fas fa-briefcase"></i> Business Skills</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Data Storytelling</span>
-                        <span class="skill-tag">Business Intelligence</span>
-                        <span class="skill-tag">Agile</span>
-                        <span class="skill-tag">Problem Solving</span>
-                        <span class="skill-tag">Communication</span>
+                <a href="https://www.linkedin.com/in/mwangi-teresia/" target="_blank" class="contact-card">
+                    <div class="icon-box">
+                        <i class="fab fa-linkedin-in"></i>
                     </div>
-                </div>
+                    <h3>LinkedIn</h3>
+                    <p>Let's connect professionally</p>
+                    <span class="card-action">View Profile <i class="fas fa-arrow-right"></i></span>
+                </a>
 
-                <div class="skill-category">
-                <h3><i class="fas fa-briefcase"></i> Domain Expertise</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Financial Modeling</span>
-                    <span class="skill-tag">Supply Chain Analytics</span>
-                    <span class="skill-tag">Stakeholder Management</span>
-                </div>
-            </div>
-                
+                <a href="https://github.com/MwangiTess" target="_blank" class="contact-card">
+                    <div class="icon-box">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>Github</h3>
+                    <p>View my projects and contributions</p>
+                    <span class="card-action">View Profile <i class="fas fa-arrow-right"></i></span>
+                </a>
             </div>
         </div>
-        
-    </div>
-</section>
+    </section>
 
+    <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>© <span id="year"></span> Teresia Mwangi. All rights reserved.</p>
+            </div>
+        </footer>
 
-
+        <script>
+            document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
 
     <script src="index.js"></script>
 </body>
